@@ -22,8 +22,8 @@ export default class CharacterIDFinder extends React.Component<IProps, IState> {
         <h1>Enter Character</h1>
         <Formik
           initialValues={{
-            realm: "",
-            character: "",
+            realm: "Proudmoore",
+            character: "Darthyoshi",
           }}
           onSubmit={async ({ realm, character }) => {
             const res = await fetch(`/api/character/find/${realm}/${character}`);
@@ -37,10 +37,10 @@ export default class CharacterIDFinder extends React.Component<IProps, IState> {
           {({ isSubmitting }) => (
             <Form>
               <label htmlFor="realm">Realm</label>
-              <Field name="realm" placeholder="Proudmoore" />
+              <Field name="realm" />
 
               <label htmlFor="character">Character</label>
-              <Field name="character" placeholder="Darthyoshi" />
+              <Field name="character" />
 
               <button type="submit" disabled={isSubmitting}>
                 Submit
