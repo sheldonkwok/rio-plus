@@ -1,6 +1,6 @@
 import React from "react";
 
-import CharacterIDFinder from "./characterID";
+import CharacterIDFinder from "./character-id";
 import Summary from "./summary";
 
 interface IProps {}
@@ -28,6 +28,7 @@ export default class App extends React.Component<IProps, IState> {
         </div>
       );
     }
+
     return <CharacterIDFinder emitCharacterID={this.setCharacterID.bind(this)}></CharacterIDFinder>;
   }
 }

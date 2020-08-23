@@ -5,13 +5,7 @@ interface IProps {
   emitCharacterID: (characterID: string) => void;
 }
 
-interface IState {
-  characterID?: string;
-}
-
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
-export default class CharacterIDFinder extends React.Component<IProps, IState> {
+export default class CharacterIDFinder extends React.Component<IProps> {
   constructor(props: IProps) {
     super(props);
   }
@@ -19,7 +13,6 @@ export default class CharacterIDFinder extends React.Component<IProps, IState> {
   render() {
     return (
       <div>
-        <h1>Enter Character</h1>
         <Formik
           initialValues={{
             realm: "Proudmoore",
